@@ -2,19 +2,21 @@ package fr.diginamic.entites;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 /**
  * Classe Livre
  */
 @Entity
 @Table(name = "LIVRE")
-public class Livre {
+public class Livre implements Serializable {
     /**Attribut de classe**/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     /**
      * Id du livre
      */
-    private int id;
+    private Integer id;
 
     @Column(name = "TITRE", nullable = false)
     /** Titre du livre**/
@@ -37,7 +39,7 @@ public class Livre {
      * @param titre
      * @param auteur
      */
-    public Livre(int id, String titre, String auteur) {
+    public Livre(Integer id, String titre, String auteur) {
         this.id = id;
         this.titre = titre;
         this.auteur = auteur;
@@ -52,4 +54,5 @@ public class Livre {
         sb.append('}');
         return sb.toString();
     }
+
 }

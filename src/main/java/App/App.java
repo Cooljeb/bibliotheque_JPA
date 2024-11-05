@@ -1,5 +1,6 @@
-package fr.diginamic.entites;
+package App;
 
+import fr.diginamic.entites.Livre;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -7,7 +8,7 @@ import jakarta.persistence.Persistence;
 /**
  * Classe de test
  */
-public class Connexion {
+public class App {
 
     public static void main(String[] args) {
 
