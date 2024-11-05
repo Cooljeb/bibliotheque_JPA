@@ -3,6 +3,7 @@ package fr.diginamic.entites;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Classe Livre
@@ -13,6 +14,7 @@ public class Livre implements Serializable {
     /**Attribut de classe**/
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
     /**
      * Id du livre
      */
@@ -26,6 +28,11 @@ public class Livre implements Serializable {
     @Column(name = "AUTEUR", length = 50, nullable = false)
     private String auteur;
 
+    /**lien vers Emprunt
+     * On définit que livre porte la relation
+     * **/
+    @ManyToMany(mappedBy = "livres")
+    private Set<Emprunt> emprunts;
 
 
     /**Constructeur vide**/
